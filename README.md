@@ -6,4 +6,4 @@ The scripts are basically using the Tabbycat API and Pandas to read through XLSX
 2. Edit the Database.xlsx file with the data for your tournament. 
 3. REMEMBER TO FILL THE LAST LINE WITH **DONE** SO THAT THE SCRIPT WORKS PROPERLY. 
 
-##PEACE!!!
+PEACE!!!
