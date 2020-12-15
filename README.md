@@ -4,6 +4,7 @@ The scripts are basically using the Tabbycat API and Pandas to read through XLSX
 
 1. Use the Windows Executable folder if you wanna just run it on windows. 
 2. Edit the Database.xlsx file with the data for your tournament. 
-3. REMEMBER TO FILL THE LAST LINE WITH **DONE** SO THAT THE SCRIPT WORKS PROPERLY. 
+3. REMEMBER TO FILL THE LAST LINES WITH **DONE** SO THAT THE SCRIPT WORKS PROPERLY. 
 
-PEACE!!!
+N.B. DO NOT CHANGE THE XLSX FILE STRUCTURE IF YOU DON'T KNOW WHAT YOU ARE DOING
+
