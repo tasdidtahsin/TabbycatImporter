@@ -21,16 +21,12 @@ r = requests.get(
 institutions = r.json()
 
 x=0
+sheet = pd.read_excel(open('database.xlsx', 'rb'),
+                           sheet_name='Teams')
 
-while True:
-    sheet = pd.read_excel(open('database.xlsx', 'rb'),
-                sheet_name='Teams')
-
-    name = sheet['Team'][x]
-    if name == "DONE":
-        print(f"{Fore.GREEN}SUCCESS! Post completed {Style.RESET_ALL}")
-        break
+for k in sheet['Team']:
     
+    name = sheet['Team'][x]
     code = sheet['Code'][x]    
     for i in institutions:
         if i['code'] == code:
@@ -125,4 +121,4 @@ while True:
     if status != 201:
         print(f"{Fore.RED}Error occured while posting {name}\n Error {status}\n{r.text} {Style.RESET_ALL}")
         
-x = input("Press any key to continue...")
+x = input("Importing is done successfully! Press any key to continue...")
