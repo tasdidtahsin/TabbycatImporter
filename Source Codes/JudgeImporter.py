@@ -23,15 +23,13 @@ r = requests.get(
 institutions = r.json()
 
 x=0
+sheet = pd.read_excel(open('database.xlsx', 'rb'),
+                           sheet_name='Judges')
 
-while True:
-    sheet = pd.read_excel(open('database.xlsx', 'rb'),
-                sheet_name='Judges')
+
+for k in sheet['Short']:
 
     short = sheet['Short'][x]
-    if short == 'DONE':
-        print(f"{Fore.GREEN}SUCCESS! Post completed {Style.RESET_ALL}")
-    
     institution = None
     for i in institutions:
         if i['code'] == short:
