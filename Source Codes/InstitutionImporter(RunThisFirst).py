@@ -10,14 +10,12 @@ site = input("Enter the site URL here (IE: https://bduadc2020.calicotab.com/):")
 token = input("Enter the API KEY here (IE: 4f54cbb378ui4yuhbgyu8u0abc78uh7t6y8uu768hu) It can be found on the change password page: ") #API Token
 x=0
 
-while True:
-    sheet = pd.read_excel(open('database.xlsx', 'rb'),
-                sheet_name='Institutions')
+sheet = pd.read_excel(open('database.xlsx', 'rb'),
+                      sheet_name='Institutions')
+
+for k in sheet['Long']:
 
     a = sheet['Long'][x]
-    if a == "DONE":
-        print(f"{Fore.GREEN}SUCCESS! Post completed {Style.RESET_ALL}")
-        break
     b = sheet['Short'][x]
     x = x+1
     
@@ -34,4 +32,7 @@ while True:
     if status != 201:
         print(Fore.RED, f"Error occured while posting {a}, {b}\n Error {status}\n{r.text} {Style.RESET_ALL}")
         
+print(f"{Fore.GREEN}SUCCESS! Post completed {Style.RESET_ALL}")
+
+
     
